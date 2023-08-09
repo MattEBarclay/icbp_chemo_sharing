@@ -6,6 +6,18 @@ library(tidyverse)
 library(broom)
 library(gt)
 
+# Useful vectors for sorting things out
+load("Rdata/useful_vectors.Rdata")
+
+# Relevant data files
+trt_q_perc <- readRDS("Rdata/trt_q_perc.RDS")
+trt_yn <- readRDS("Rdata/trt_yn.RDS")
+trt_unadj_n <- readRDS("Rdata/trt_unadj_n.RDS")
+trt_q <- readRDS("Rdata/trt_q.RDS")
+
+# Useful functions
+source("chemo_analysis0_repeated_functions.R")
+
 # Step 1. What is the use of chemotherapy and radiotherapy overall across 
 # jurisdictions and cancer sites? 
 # Description of use of chemotherapy and radiotherapy at the jurisdiction level 
@@ -147,9 +159,6 @@ ggsave("results/chemo_correlation.png",
 
 cor.test(dat$use, dat$time)
 
-rm(dat)
-rm(dat_timely)
-rm(meta_use)
-rm(meta_timely)
-
+# Clean up
+rm(list = ls())
 

@@ -8,6 +8,15 @@ library(tidyverse)
 library(broom)
 library(gt)
 
+# Useful vectors for sorting things out
+load("Rdata/useful_vectors.Rdata")
+
+# Relevant data files
+trt_q <- readRDS("Rdata/trt_q.RDS")
+
+# Useful functions
+source("chemo_analysis0_repeated_functions.R")
+
 # Create dataset for meta-analysis ----------------------------------------
 dat <- trt_q |> 
   filter(
@@ -117,6 +126,8 @@ appdx_analysis4 <- dat |>
     )
   )
 
+appdx_analysis4 |> saveRDS("results/appdx_analysis4.RDS")
+
 # Create the meta-analysis table ------------------------------------------
 
 # Code to create table
@@ -177,9 +188,7 @@ chemo_analysis4_table <- table |>
     i2 = md("*I<sup>2</sup>* ***")
   ) 
 
-chemo_analysis4_table |>
-  gtsave("results/chemo_table4.rtf")
-
+chemo_analysis4_table |> saveRDS("results/chemo_analysis4_table.RDS")
 
 
 # Create the forest plot --------------------------------------------------
@@ -270,8 +279,5 @@ ggsave("results/chemo_time2_differences.png",
 
 
 # Clean up ----------------------------------------------------------------
-rm(dat)
-rm(p)
-rm(poly_metan)
-rm(table)
+rm(list = ls())
 

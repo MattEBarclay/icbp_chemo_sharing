@@ -5,6 +5,15 @@ library(tidyverse)
 library(broom)
 library(gt)
 
+# Useful vectors for sorting things out
+load("Rdata/useful_vectors.Rdata")
+
+# Relevant data file
+trt_unadj_n <- readRDS("Rdata/trt_unadj_n.RDS")
+
+# Useful functions
+source("chemo_analysis0_repeated_functions.R")
+
 # Create dataset for meta-analysis ----------------------------------------
 dat1 <- trt_unadj_n |>
   filter(
@@ -88,6 +97,7 @@ appdx_analysis1 <- dat |> select(site_order, jurisdiction, n, n_trt, prop, lower
     lower = "(95% confidence interval)",
   ) 
   
+appdx_analysis1 |> saveRDS("results/appdx_analysis1.RDS")
 
 # Meta-analysis data processing ------------------------------------------
 poly_metan <- 
@@ -171,8 +181,7 @@ chemo_analysis1_table <- table |>
     i2 = md("*I<sup>2</sup>* ***")
   ) 
 
-chemo_analysis1_table |>
-  gtsave("results/chemo_table1.rtf")
+chemo_analysis1_table |> saveRDS("results/chemo_analysis1_table.RDS")
 
 
 
@@ -372,8 +381,5 @@ rm(j, c, extras)
 
 
 # Clean up ----------------------------------------------------------------
-rm(dat)
-rm(p)
-rm(poly_metan)
-rm(table)
+rm(list = ls())
 

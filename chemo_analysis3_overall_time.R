@@ -8,6 +8,18 @@ library(broom)
 library(gt)
 library(metamedian)
 
+
+# Useful vectors for sorting things out
+load("Rdata/useful_vectors.Rdata")
+
+# Relevant data files
+trt_q_perc <- readRDS("Rdata/trt_q_perc.RDS")
+trt_unadj_n <- readRDS("Rdata/trt_unadj_n.RDS")
+
+# Useful functions
+source("chemo_analysis0_repeated_functions.R")
+
+
 # Table of percentiles for appendix  ------------------------------------------
 table <- trt_q_perc |>
   filter(
@@ -58,7 +70,7 @@ appdx_analysis3 <- table |> gt() |>
     )
   )
 
-appdx_analysis3 
+appdx_analysis3 |> saveRDS("results/appdx_analysis3.RDS")
 
 # Create dataset for meta-analysis ----------------------------------------
 dat <- trt_q_perc |> 
@@ -185,8 +197,7 @@ chemo_analysis3_table <- table |>
     i2 = md("*I<sup>2</sup>* ***")
   ) 
 
-chemo_analysis3_table |>
-  gtsave("results/chemo_table3.rtf")
+chemo_analysis3_table |> saveRDS("results/chemo_analysis3_table.RDS")
 
 
 # Create the forest plot --------------------------------------------------
@@ -267,8 +278,5 @@ ggsave("results/chemo_time1_overall_alternative1.png",
 
 
 # Clean up ----------------------------------------------------------------
-rm(dat)
-rm(p)
-rm(poly_metan)
-rm(table)
+rm(list = ls())
 
