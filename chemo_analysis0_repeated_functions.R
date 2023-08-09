@@ -56,22 +56,6 @@ chemo_exclusions_all <- function(data, jurisdiction = jurisdiction, cancer = can
             {{cancer}} == "Liver"
           )
       )
-      &
-      # Specific problem with chemo ovarian data
-      !(
-        ({{jurisdiction}} == "Saskatchewan")  & 
-          (
-            {{cancer}} == "Ovarian" 
-          )
-      )
-      &
-        # filter out all cancers-combined due to oral chemo issue
-        !(
-          ({{jurisdiction}} %in% c("Manitoba", "Victoria", "Wales"))  & 
-            (
-              {{cancer}} %in% c("All 8 cancers", "Age 15-64", "Age 65-74", "Age 75-84", "Age 85-99", "Men", "Women")
-            )
-        )
     ) |>
     mutate(
       # exclude (but still present) where data may not be comparable
@@ -94,6 +78,20 @@ chemo_exclusions_all <- function(data, jurisdiction = jurisdiction, cancer = can
           ({{jurisdiction}} %in% c("Manitoba", "Victoria", "Wales"))  & 
             (
               {{cancer}} %in% c("Colon, stage III", "Colon", "Rectal", "Liver")
+            )
+        ) ~ 1,
+        # Specific problem with chemo ovarian data
+        (
+          ({{jurisdiction}} == "Saskatchewan")  & 
+            (
+              {{cancer}} == "Ovarian" 
+            )
+        ) ~ 1,
+        # filter out all cancers-combined due to oral chemo issue
+        (
+          ({{jurisdiction}} %in% c("Manitoba", "Victoria", "Wales"))  & 
+            (
+              {{cancer}} %in% c("All 8 cancers", "Age 15-64", "Age 65-74", "Age 75-84", "Age 85-99", "Men", "Women")
             )
         ) ~ 1,
         TRUE ~ 0
