@@ -151,14 +151,13 @@ p <- p +
   theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "cm")) +
   theme(panel.spacing.y = unit(0.3,"line"))
 p 
-ggsave("results/chemo_correlation.png",
+ggsave("results/chemo_correlation.svg",
        plot = p,
        width = 15,
        height = 15,
        units = "cm")
 
 cor.test(dat$use, dat$time)
-
 # Clean up
 rm(list = ls())
 

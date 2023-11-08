@@ -237,7 +237,7 @@ p <- p + theme_bw() +
   theme_icbp() +
   icbp_colour_manual() 
 p 
-ggsave("results/chemo_overall_props.png",
+ggsave("results/chemo_overall_props.svg",
        plot = p,
        width = 15,
        height = 22.5,
@@ -274,7 +274,7 @@ p <- p +
   icbp_colour_manual()
 p <- p + theme(strip.text.x=element_text(size=7)) 
 p 
-ggsave("results/chemo_overall_props_alternative1.png",
+ggsave("results/chemo_overall_props_alternative1.svg",
        plot = p,
        width = 15,
        height = 13,
@@ -370,7 +370,7 @@ p <- p + theme(axis.text.x=element_text(size=8, color="black", vjust = 0.5, hjus
 p <- p + facet_wrap(ctry_order~., ncol = 4)
 p <- p + theme(strip.text.x=element_text(size=7)) 
 p 
-ggsave("results/chemo_overall_props_alternative2_lines.png",
+ggsave("results/chemo_overall_props_alternative2_lines.svg",
        plot = p,
        width = 15,
        height = 13,

@@ -268,7 +268,7 @@ p <- p + theme_bw() +
   theme_icbp() +
   icbp_colour_manual()
 p 
-ggsave("results/chemo_odds.png",
+ggsave("results/chemo_odds.svg",
        plot = p,
        width = 15,
        height = 11.25,

@@ -235,7 +235,7 @@ p <- p + theme_bw() +
   theme_icbp() +
   icbp_colour_manual()
 p 
-ggsave("results/chemo_time1_overall.png",
+ggsave("results/chemo_time1_overall.svg",
        plot = p,
        width = 15,
        height = 15,
@@ -270,7 +270,7 @@ p <- p + theme_bw() +
   icbp_colour_manual()
 p <- p + theme(strip.text.x=element_text(size=7)) 
 p 
-ggsave("results/chemo_time1_overall_alternative1.png",
+ggsave("results/chemo_time1_overall_alternative1.svg",
        plot = p,
        width = 15,
        height = 13,
