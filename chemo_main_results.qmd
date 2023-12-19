@@ -3,7 +3,7 @@ title: "Chemotherapy results"
 format: 
   docx: 
     reference-doc: custom-reference-doc.docx
-output-file: "chemo_main_results_2023-11-08.docx"
+output-file: "chemo_main_results_2023-12-19.docx"
 ---
 
 ```{r}
@@ -160,7 +160,7 @@ Grey diamonds show the meta-analysis estimate and its confidence intervals. Wide
 
 Estimates not included in producing meta-analysis estimates are shown as hollow light grey circles. 
 
-![](results/chemo_overall_props.svg) 
+![](results/figure1_chemo.svg) 
 {{< pagebreak >}}
 
 #### Results figure 1 \- appendix version 1. Overall crude proportion of patients treated by chemotherapy for each cancer site, by jurisdiction.
@@ -173,7 +173,7 @@ Grey diamonds show the meta-analysis estimate and its confidence intervals. Wide
 
 Estimates not included in producing meta-analysis estimates are shown as hollow light grey circles.
 
-![](results/chemo_overall_props_alternative1.svg) 
+![](results/figure1_chemo_appendix_v1.svg) 
 
 {{< pagebreak >}}
 
@@ -183,7 +183,7 @@ When estimating treatment proportion for stage 3 colon cancer in New South Wales
 
 In each figure panel, the jurisdiction-specific estimate is shown in bold black line, whereas all other jurisdiction lines are shown in grey. Cancer sites on the x-axis appear in order of increasing chemotherapy use across the total analysis sample comprising all jurisdictions.
 
-![](results/chemo_overall_props_alternative2_lines.svg) 
+![](results/figure1_chemo_appendix_v2.svg) 
 
 
 {{< pagebreak >}}
@@ -197,7 +197,7 @@ White circle estimates are adjusted for stage at diagnosis are only shown for ju
 
 Grey diamonds show the meta-analysis estimate and its confidence intervals. Wider grey lines show the associated prediction interval.
 
-![](results/chemo_odds.svg) 
+![](results/figure2_chemo.svg) 
 
 {{< pagebreak >}}
 
@@ -209,7 +209,7 @@ Black circles show medians and black lines show inter-quartile ranges.
 
 Grey diamonds show the meta-analysis estimate and its confidence intervals. Wider grey lines show the associated prediction interval.
 
-![](results/chemo_time1_overall.svg) 
+![](results/figure3_chemo.svg) 
 
 {{< pagebreak >}}
 
@@ -221,7 +221,7 @@ Black circles show medians and black lines show inter-quartile ranges.
 
 Grey diamonds show the meta-analysis estimate and its confidence intervals. Wider grey lines show the associated prediction interval.
 
-![](results/chemo_time1_overall_alternative1.svg) 
+![](results/figure3_chemo_appendix.svg) 
 
 {{< pagebreak >}}
 
@@ -233,7 +233,7 @@ Black circles show median differences and black lines show 95% confidence interv
 
 Grey diamonds show the meta-analysis estimate and its confidence intervals. Wider grey lines show the associated prediction interval.
 
-![](results/chemo_time2_differences.svg) 
+![](results/figure4_chemo_appendix.svg) 
 
 {{< pagebreak >}}
 
@@ -241,7 +241,7 @@ Grey diamonds show the meta-analysis estimate and its confidence intervals. Wide
 
 No clear association between time-to-treatment and use.
 
-![](results/chemo_correlation.svg) 
+![](results/figure5_chemo_correlation_appendix.svg) 
 
 {{< pagebreak >}}
 
@@ -298,7 +298,7 @@ readRDS("results/appdx_analysis4.RDS")
 ### Data appendix 5. Trends in chemotherapy use over time.
 
 #### Trend in overall use of chemotherapy.
-![](results/chemo_overall_trend.svg) 
+![](results/figure6_chemo_overall_trend_appendix.svg) 
 
 
 ```{r}

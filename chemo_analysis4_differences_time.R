@@ -271,7 +271,12 @@ p <- p + theme_bw() +
   theme_icbp() +
   icbp_colour_manual()
 p 
-ggsave("results/chemo_time2_differences.svg",
+ggsave("results/figure4_chemo_appendix.svg",
+       plot = p,
+       width = 15,
+       height = 11.25,
+       units = "cm")
+ggsave("results/figure4_chemo_appendix.pdf",
        plot = p,
        width = 15,
        height = 11.25,

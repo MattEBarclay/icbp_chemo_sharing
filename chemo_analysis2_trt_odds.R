@@ -268,12 +268,16 @@ p <- p + theme_bw() +
   theme_icbp() +
   icbp_colour_manual()
 p 
-ggsave("results/chemo_odds.svg",
+ggsave("results/figure2_chemo.svg",
        plot = p,
        width = 15,
        height = 11.25,
        units = "cm")
-
+ggsave("results/figure2_chemo.pdf",
+       plot = p,
+       width = 15,
+       height = 11.25,
+       units = "cm")
 
 # Clean up ----------------------------------------------------------------
 rm(list = ls())

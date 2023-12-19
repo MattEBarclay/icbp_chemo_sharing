@@ -237,7 +237,12 @@ p <- p + theme_bw() +
   theme_icbp() +
   icbp_colour_manual() 
 p 
-ggsave("results/chemo_overall_props.svg",
+ggsave("results/figure1_chemo.svg",
+       plot = p,
+       width = 15,
+       height = 22.5,
+       units = "cm")
+ggsave("results/figure1_chemo.pdf",
        plot = p,
        width = 15,
        height = 22.5,
@@ -274,11 +279,17 @@ p <- p +
   icbp_colour_manual()
 p <- p + theme(strip.text.x=element_text(size=7)) 
 p 
-ggsave("results/chemo_overall_props_alternative1.svg",
+ggsave("results/figure1_chemo_appendix_v1.svg",
        plot = p,
        width = 15,
        height = 13,
        units = "cm")
+ggsave("results/figure1_chemo_appendix_v1.pdf",
+       plot = p,
+       width = 15,
+       height = 13,
+       units = "cm")
+
 
 dat <- dat |> mutate(
   site_order = factor(cancer, levels = site)
@@ -370,7 +381,12 @@ p <- p + theme(axis.text.x=element_text(size=8, color="black", vjust = 0.5, hjus
 p <- p + facet_wrap(ctry_order~., ncol = 4)
 p <- p + theme(strip.text.x=element_text(size=7)) 
 p 
-ggsave("results/chemo_overall_props_alternative2_lines.svg",
+ggsave("results/figure1_chemo_appendix_v2.svg",
+       plot = p,
+       width = 15,
+       height = 13,
+       units = "cm")
+ggsave("results/figure1_chemo_appendix_v2.pdf",
        plot = p,
        width = 15,
        height = 13,

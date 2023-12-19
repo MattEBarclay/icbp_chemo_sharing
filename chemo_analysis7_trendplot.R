@@ -166,7 +166,12 @@ p <- p + theme(axis.text.x=element_text(size=8, color="black", vjust = 0.5, hjus
 p <- p + facet_wrap(ctry_order~., ncol = 4)
 p <- p + theme(strip.text.x=element_text(size=7)) 
 p 
-ggsave("results/chemo_overall_trend.svg",
+ggsave("results/figure6_chemo_overall_trend_appendix.svg",
+       plot = p,
+       width = 15,
+       height = 13,
+       units = "cm")
+ggsave("results/figure6_chemo_overall_trend_appendix.pdf",
        plot = p,
        width = 15,
        height = 13,
